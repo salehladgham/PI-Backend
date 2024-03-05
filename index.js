@@ -9,6 +9,7 @@ app.use(express.json());
 app.use(cors());
 
 const PORT = process.env.PORT || 3000;
+
 app.use("/pulic/auth", require("./routes/authRoutes"));
 app.use("/api/air-entretiens", require("./routes/airEntretienRoutes"));
 

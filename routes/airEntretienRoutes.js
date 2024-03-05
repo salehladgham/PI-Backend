@@ -1,4 +1,3 @@
-// airEntretienRoutes.js
 const express = require("express");
 const router = express.Router();
 const {
@@ -9,7 +8,7 @@ const {
     deleteAirEntretien,
 } = require("../controllers/airEntretienControllers");
 
-// Routes
+
 router.post("/", createAirEntretien);
 router.get("/", getAllAirEntretiens);
 router.get("/:id", getAirEntretienById);
