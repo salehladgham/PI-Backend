@@ -1,16 +1,18 @@
+const mongoose = require("mongoose");
+
 const airEntretienSchema = new mongoose.Schema({
-    userajout: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "User",
-    },
-    usermodif: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "User",
-    },
-    usersupp: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "User",
-    },
+    // userajout: {
+    //     type: mongoose.Schema.Types.ObjectId,
+    //     ref: "User",
+    // },
+    // usermodif: {
+    //     type: mongoose.Schema.Types.ObjectId,
+    //     ref: "User",
+    // },
+    // usersupp: {
+    //     type: mongoose.Schema.Types.ObjectId,
+    //     ref: "User",
+    // },
     equipementair: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "AirEquipement",
