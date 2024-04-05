@@ -1,26 +1,8 @@
 const mongoose = require("mongoose");
 
 const airEntretienSchema = new mongoose.Schema({
-    // userajout: {
-    //     type: mongoose.Schema.Types.ObjectId,
-    //     ref: "User",
-    // },
-    // usermodif: {
-    //     type: mongoose.Schema.Types.ObjectId,
-    //     ref: "User",
-    // },
-    // usersupp: {
-    //     type: mongoose.Schema.Types.ObjectId,
-    //     ref: "User",
-    // },
-    equipementair: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "AirEquipement",
-    },
-    superviseur: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Superviseur",
-    },
+    equipementair: String,
+    superviseur: String,
     date_entretien: Date,
     dateperiodesecheur: Date,
     nbrhprochain: Number,
