@@ -1,5 +1,5 @@
 const AirEntretien = require("../models/airEntretienModel");
-
+const fs = require("fs");
 // Create a new AirEntretien
 exports.createAirEntretien = async (req, res) => {
     try {
@@ -54,5 +54,27 @@ exports.deleteAirEntretien = async (req, res) => {
         res.status(200).json({ message: "AirEntretien deleted successfully" });
     } catch (error) {
         res.status(500).json({ message: error.message });
+    }
+};
+
+exports.insertAll = async (req, res) => {
+    try {
+        // Read the JSON file
+        const data = JSON.parse(
+            fs.readFileSync("generated-data-2.json", "utf-8")
+        );
+
+        // Loop through each object and add them one by one
+        for (const item of data) {
+            // Create a new document using your Mongoose model
+            const airEquipment = await AirEntretien.create(item);
+            // Save the document to the database
+            console.log("Data added successfully:", airEquipment);
+        }
+        res.status(200).json({ message: "AirEquipments add successfully" });
+
+        console.log("All data added successfully.");
+    } catch (error) {
+        console.error("Error adding data:", error);
     }
 };
